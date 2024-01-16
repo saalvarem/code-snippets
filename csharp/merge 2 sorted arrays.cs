@@ -1,6 +1,6 @@
 // assume that both arrays are sorted in ascending order
 
-private static int[] Merge2SortedArrays(int[] array1, int[] array2)
+private int[] Merge2SortedArrays(int[] array1, int[] array2)
 {
   // manually tracking of the mergeArray's index
   // can offer a slight performance improvement over Lists
@@ -44,8 +44,10 @@ private static int[] Merge2SortedArrays(int[] array1, int[] array2)
   return mergedArray;
 }
 
+
+// ======================================================================
 // this uses "System.Collections.Generic" for the List;
-private static List<int> Merge2SortedArraysWithList(int[] array1, int[] array2)
+private List<int> Merge2SortedArraysWithList(int[] array1, int[] array2)
 {
   // Simpler to read but with a slight cost in memory and performance
   // overhead compared to tracking the mergedArray's index manually
