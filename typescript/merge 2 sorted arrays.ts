@@ -1,5 +1,9 @@
-// assume that both arrays are sorted in ascending order
-
+/**
+ * Merges two sorted number arrays
+ * @param array1 - first sorted array in ascending order
+ * @param array2 - second sorted array in ascending order
+ * @returns merged sorted array
+ */
 function merge2SortedArrays(array1: number[], array2: number[]): number[] {
   const mergedArray: number[] = [];
   let i = 0;

@@ -1,10 +1,16 @@
-// assume that both arrays are sorted in ascending order
-
+/// <summary>
+/// Merges two sorted arrays into a single sorted array
+/// </summary>
+/// <param name="array1">The first sorted int array in ascending order</param>
+/// <param name="array2">The second sorted int array in ascending order</param>
+/// <returns>A single sorted array containing all elements from both arrays</returns>
+/// <remarks>
+/// This method manually tracks the mergedArray's index
+/// for a slight performance improvement over using a List
+/// since the size of the resulting array is known
+/// </remarks>
 private int[] Merge2SortedArrays(int[] array1, int[] array2)
 {
-  // manually tracking of the mergeArray's index
-  // can offer a slight performance improvement over Lists
-  // if the size of the resulting array is known
   int[] mergedArray = new int[array1.Length + array2.Length];
   int i = 0;
   int j = 0;
@@ -45,12 +51,18 @@ private int[] Merge2SortedArrays(int[] array1, int[] array2)
 }
 
 
-// ======================================================================
-// this uses "System.Collections.Generic" for the List;
+/// <summary>
+/// Merges two sorted arrays into a single sorted array
+/// </summary>
+/// <param name="array1">The first sorted int array in ascending order</param>
+/// <param name="array2">The second sorted int array in ascending order</param>
+/// <returns>A single sorted array containing all elements from both arrays</returns>
+/// <remarks>
+/// This implementation uses a List to track the merged array
+/// for easier readability at the cost of slight performance/memory.
+/// </remarks>
 private List<int> Merge2SortedArraysWithList(int[] array1, int[] array2)
 {
-  // Simpler to read but with a slight cost in memory and performance
-  // overhead compared to tracking the mergedArray's index manually
   List<int> mergedList = new List<int>();
   int i = 0;
   int j = 0;

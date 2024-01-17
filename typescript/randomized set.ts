@@ -24,7 +24,7 @@ class RandomizedSet<T extends number | string> {
    * @returns true if the value was added to the set, false if the value already exists in the set
    */
   add(value: T): boolean {
-    if (typeof this.set[value] === "number") {
+    if (typeof this.set[value] !== "undefined") {
       return false;
     }
 
@@ -59,14 +59,14 @@ class RandomizedSet<T extends number | string> {
   }
 
   /**
-   * @returns the entries in the set in no particular order
+   * @returns the values in the set in no particular order
    */
   entries(): T[] {
     return this.array;
   }
 
   /**
-   * Returns true if the value exists in the set
+   * Returns true if the value exists in the set, false otherwise
    * @param value - value to check
    */
   has(value: T): boolean {
