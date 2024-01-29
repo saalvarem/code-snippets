@@ -9,7 +9,7 @@
 /// for a slight performance improvement over using a List
 /// since the size of the resulting array is known
 /// </remarks>
-private int[] Merge2SortedArrays(int[] array1, int[] array2)
+private int[] MergeSortedArrays(int[] array1, int[] array2)
 {
   int[] mergedArray = new int[array1.Length + array2.Length];
   int i = 0;
@@ -61,7 +61,7 @@ private int[] Merge2SortedArrays(int[] array1, int[] array2)
 /// This implementation uses a List to track the merged array
 /// for easier readability at the cost of slight performance/memory.
 /// </remarks>
-private List<int> Merge2SortedArraysWithList(int[] array1, int[] array2)
+private List<int> MergeSortedArraysWithList(int[] array1, int[] array2)
 {
   List<int> mergedList = new List<int>();
   int i = 0;

@@ -20,11 +20,13 @@ The repository is organized by language, and each language has its own directory
 
 ## Usage
 
-These snippets are intended for reference purposes or as study materials and may cover common programming tasks. They coding exercises I use to practice my syntax in different languages.
+These snippets are intended for reference purposes or as study materials and may cover common programming tasks. They are simple coding exercises I use to practice code syntax of different languages.
 
-They are not intended to be complete applications and might not be production-ready.
+They are not intended to be complete applications and are likely not production-ready. Please review and test them carefully before using them in your own projects.
 
 For a list of what functionality is implemented in each snippet, please refer to the `table of contents.md` file in the root directory.
+
+<!-- incorportate table  -->
 
 ## License
 

@@ -4,7 +4,7 @@
  * @param array2 - second sorted array in ascending order
  * @returns merged sorted array
  */
-function merge2SortedArrays(array1: number[], array2: number[]): number[] {
+function mergeSortedArrays(array1: number[], array2: number[]): number[] {
   const mergedArray: number[] = [];
   let i = 0;
   let j = 0;
@@ -19,17 +19,8 @@ function merge2SortedArrays(array1: number[], array2: number[]): number[] {
     }
   }
 
-  // push remaining elements from array1, if any
-  while (i < array1.length) {
-    mergedArray.push(array1[i]);
-    i++;
-  }
-
-  // push remaining elements from array2, if any
-  while (j < array2.length) {
-    mergedArray.push(array2[j]);
-    j++;
-  }
-
-  return mergedArray;
+  // spread remaining elements from array1 or array2 from where we left off
+  return [...mergedArray, ...array1.slice(i), ...array2.slice(j)];
 }
+
+export default mergeSortedArrays;
