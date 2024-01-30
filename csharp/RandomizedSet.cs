@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// A "set" data structure that can return a value at random.
 /// </summary>
 /// <typeparam name="T">integers, float or strings</typeparam>
-class RandomizedSet<T>
+class RandomizedSet<T> where T : struct
 {
     private readonly Dictionary<T, int> set;
     private readonly List<T> array;
@@ -18,9 +18,13 @@ class RandomizedSet<T>
         this.random = new();
     }
 
-    /// <returns>a random value from the set</returns>
-    public T GetRandom()
+    /// <returns>a random value from the set or null</returns>
+    public T? GetRandom()
     {
+        if (this.array.Count == 0)
+        {
+            return null;
+        }
         int randomIndex = this.random.Next(this.array.Count);
         return this.array[randomIndex];
     }
@@ -58,16 +62,17 @@ class RandomizedSet<T>
     /// <returns>true if the value was removed from the set, false if the value does not exist in the set</returns>
     public bool Remove(T value)
     {
-        if (this.set.ContainsKey(value))
+        if (!this.set.ContainsKey(value))
         {
-            int index = this.set[value];
-            this.array[index] = this.array[this.array.Count - 1];
-            this.set[this.array[index]] = index;
-            this.set.Remove(value);
-            this.array.RemoveAt(this.array.Count - 1);
-            return true;
+            return false;
         }
-        return false;
+
+        int index = this.set[value];
+        this.array[index] = this.array[this.array.Count - 1];
+        this.set[this.array[index]] = index;
+        this.set.Remove(value);
+        this.array.RemoveAt(this.array.Count - 1);
+        return true;
     }
 
     /// <returns>the values in the set in no particular order</returns>

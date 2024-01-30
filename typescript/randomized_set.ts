@@ -11,9 +11,12 @@ class RandomizedSet<T extends number | string> {
   }
 
   /**
-   * @returns a random value from the set
+   * @returns a random value from the set or null
    */
-  getRandom(): T {
+  getRandom(): T | null {
+    if (this.array.length === 0) {
+      return null;
+    }
     const randomIndex = Math.floor(Math.random() * this.array.length);
     return this.array[randomIndex];
   }
@@ -47,15 +50,15 @@ class RandomizedSet<T extends number | string> {
    * @returns true if the value was deleted from the set, false if the value does not exist in the set
    */
   delete(value: T): boolean {
-    const index = this.set[value];
-    if (typeof index !== "undefined") {
-      this.array[index] = this.array[this.array.length - 1];
-      this.set[this.array[index]] = index;
-      delete this.set[value];
-      this.array.pop();
-      return true;
+    if (typeof this.set[value] === "undefined") {
+      return false;
     }
-    return false;
+    const index = this.set[value];
+    this.array[index] = this.array[this.array.length - 1];
+    this.set[this.array[index]] = index;
+    delete this.set[value];
+    this.array.pop(); // remove the new last element
+    return true;
   }
 
   /**
