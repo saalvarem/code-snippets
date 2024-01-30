@@ -14,12 +14,15 @@ Files
   |
   |--- csharp
   |     |
+  |     |--- MergeSort.cs
   |     |--- MergeSortedArrays.cs
   |     |--- RandomizedSet.cs
   |
   |--- python
   |     |
+  |     |--- merge_sort.py
   |     |--- merge_sorted_arrays.py
+  |     |--- randomized_set.py
   |
   |--- typescript
         |
