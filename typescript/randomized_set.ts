@@ -71,6 +71,7 @@ class RandomizedSet<T extends number | string> {
   /**
    * Returns true if the value exists in the set, false otherwise
    * @param value - value to check
+   * @returns true if the value exists in the set, false otherwise
    */
   has(value: T): boolean {
     return typeof this.set[value] !== "undefined";

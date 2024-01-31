@@ -24,9 +24,39 @@ These snippets are intended for reference purposes or as study materials and may
 
 They are not intended to be complete applications and are likely not production-ready. Please review and test them carefully before using them in your own projects.
 
-For a list of what functionality is implemented in each snippet, please refer to the `table of contents.md` file in the root directory.
+## Table of Contents
 
-<!-- incorportate table  -->
+| File Name                 | Description                                                     |
+| ------------------------- | --------------------------------------------------------------- |
+| merge sort                | Simple implementation of Merge Sort algorithm                   |
+| merge sorted arrays/lists | Merges 2 arrays of numbers sorted in ascending order            |
+| quick sort                | Simple implementation of Quick Sort algorithm                   |
+| randomized set            | Implement a "Set" data structure that can return a random value |
+
+## Directory Structure
+
+```
+Files
+  |
+  |--- csharp
+  |     |
+  |     |--- MergeSort.cs
+  |     |--- MergeSortedArrays.cs
+  |     |--- RandomizedSet.cs
+  |
+  |--- python
+  |     |
+  |     |--- merge_sort.py
+  |     |--- merge_sorted_lists.py
+  |     |--- randomized_set.py
+  |
+  |--- typescript
+        |
+        |--- merge_sort.ts
+        |--- merge_sorted_arrays.ts
+        |--- quick_sort.ts
+        |--- randomized_set.ts
+```
 
 ## License
 

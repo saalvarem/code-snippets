@@ -72,3 +72,26 @@ class RandomizedSet:
     self.list.pop()
     del self.set[value]
     return True
+
+  '''
+  Returns:
+  (List[Union[int, str]]) the values in the set in no particular order
+  '''
+  def entries(self) -> List:
+    return self.list
+
+  '''
+  Parameters:
+  value (Union[int, str]): Value to check
+  Returns:
+  (bool) True if the value exists in the set, False otherwise
+  '''
+  def has(self, value: Union[int, str]) -> bool:
+    return value in self.set
+
+  '''
+  Returns:
+  (int) The size of the set
+  '''
+  def size(self) -> int:
+    return len(self.set)
